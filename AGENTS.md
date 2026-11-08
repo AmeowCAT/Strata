@@ -99,3 +99,13 @@ follow it whether a person or an agent writes the text. The short version:
   [docs/COMMUNITY_BENCHMARKS.md](docs/COMMUNITY_BENCHMARKS.md), compare against a same-day run of the build you are
   testing, and say what you did not test.
 - Open test requests and the hardware that is wanted are listed in [docs/TEST_REQUESTS.md](docs/TEST_REQUESTS.md).
+
+## This checkout: the operator's network
+
+Downloads from this machine may use the operator's HTTP proxy at `127.0.0.1:7890`:
+`curl -x http://127.0.0.1:7890 ...`, or `HTTP_PROXY` / `HTTPS_PROXY` for tools that read them. It reaches
+GitHub and Hugging Face faster than a direct connection. For Hugging Face the mirror `hf-mirror.com` (the
+same path with the host swapped) was the fastest route measured here; `huggingface.co` direct also works.
+
+This section is local to this checkout. Keep it at the end of the file, so a change upstream merges without
+a conflict.
